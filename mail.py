@@ -27,15 +27,17 @@ def get_cookie(url, port: int, dom):
         "Referrer-Policy": "strict-origin-when-cross-origin",
     }
     try:
-        r = session.get(url=url, headers=headers, timeout=2)
+        r = session.get(url=url, headers=headers, timeout=0.5)
         r.close()
-        print(r.status_code)
+        # print(r.status_code)
         # print(r.text)
         if r.status_code == 200:
-            print(f"cookie datadome: {r.cookies.get('datadome')}")
-            return r.cookies.get("datadome")
+            print(port)
+            # print(f"cookie datadome: {r.cookies.get('datadome')}")
+            # return r.cookies.get("datadome")
     except Exception as e:
         print(e)
 
 
-get_cookie("https://ticketing.liverpoolfc.com/usercontent/splash.html", 35766, "")
+for i in range(20900, 21000, 1):
+    get_cookie("https://ticketing.liverpoolfc.com/usercontent/splash.html", i, "")
