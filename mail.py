@@ -38,5 +38,4 @@ def get_cookie(url, port: int, dom):
         print(e)
 
 
-for i in range(20900, 20905, 1):
-    get_cookie("https://ticketing.liverpoolfc.com/usercontent/splash.html", i, "")
+get_cookie("https://ticketing.liverpoolfc.com/usercontent/splash.html", 35766, "")
